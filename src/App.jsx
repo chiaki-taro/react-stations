@@ -7,13 +7,22 @@ import React, { useState } from 'react';
  */
 export const App = () => {
   const [dogUrl, setDogUrl] = useState("https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg");
+
+  const fetchDogUrl = () => {
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((res) => res.json())
+      .then((apiData) => {
+        setDogUrl(apiData.message)
+      });
+  }
+
   return (
     <div>
       <header>Dogアプリ</header>
       <body>
         <h2>犬の画像を表示するサイトです</h2>
         <img src= {dogUrl}/>
-        <button onClick={() => setDogUrl("https://images.dog.ceo/breeds/hound-english/n02089973_1132.jpg")}>更新</button>
+        <button onClick={() => fetchDogUrl()}>更新</button>
       </body>
     </div>
   )
