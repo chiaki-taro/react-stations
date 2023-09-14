@@ -1,0 +1,38 @@
+header {
+  font-size: 30px;
+  font-family: serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.content {
+  display: flex;
+}
+
+.subtitle {
+  width: 60%;
+  height: 200px;
+
+  h2 {
+    padding: 50px 70px;
+  }
+
+}
+
+.dogimg{
+  width: 40%;
+  height: 200px;
+
+  button {
+    background-color: #5dca88;;
+    box-shadow: 0px 10px #1a7940;
+  }
+
+  button:active {
+    box-shadow: none;
+    position: relative;
+    top: 7px;
+  }
+}
+
