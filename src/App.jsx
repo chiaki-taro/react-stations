@@ -2,6 +2,10 @@
 
 import './App.css'
 import React, { useState } from 'react';
+import Header from './Header';
+import DogImage from './DogImage';
+import Description from './Description';
+import DogListContainer from './DogListContainer';
 /**
  * @type {() => JSX.Element}
  */
@@ -18,15 +22,14 @@ export const App = () => {
 
   return (
     <div>
-      <header>Dogアプリ</header>
+      <Header />
       <div className='content'>
-        <div className='subtitle'>
-          <h2>犬の画像を表示するサイトです</h2>
-        </div>
-        <div className='dogimg'>
-          <img src= {dogUrl}/>
-          <button onClick={() => fetchDogUrl()}>更新</button>
-        </div>
+        <Description />
+        <DogImage
+          imageUrl={dogUrl}
+          fetchDogUrl={fetchDogUrl}
+        />
+        <DogListContainer />
       </div>
     </div>
   )
